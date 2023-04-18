@@ -155,7 +155,7 @@ const Header: React.FC = () => {
               <Link href="/tv">
                 <MenuButton>TV 프로그램</MenuButton>
               </Link>
-            </Menu>
+            </Menu>  
             <SearchMenu>
               <SearchContainer>
                 <SearchFormWrapper>
