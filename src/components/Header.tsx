@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 import styled from "@emotion/styled";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Base = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background: rgb(255,255,255);
+  background: rgb(255, 255, 255);
   text-align: center;
   box-shadow: rgb(0 0 0 / 0%) 0px 1px 0px 0px;
   width: 100%;
@@ -21,7 +22,7 @@ const Navigation = styled.nav`
 const MenuListWrapper = styled.div``;
 
 const MenuList = styled.ul`
-  list-style:none;
+  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
@@ -38,9 +39,9 @@ const Menu = styled.li`
   }
 `;
 
-const MenuButton = styled.button<{active?: boolean}>`
+const MenuButton = styled.button<{ active?: boolean }>`
   font-size: 15px;
-  color: ${({ active }) => active ? 'rgb(53, 53, 53)' : 'rgb(126, 126, 126)'};
+  color: ${({ active }) => (active ? "rgb(53, 53, 53)" : "rgb(126, 126, 126)")};
   cursor: pointer;
   border: none;
   background: none;
@@ -128,13 +129,9 @@ const SignUp = styled.button`
   margin: 15px 0;
 `;
 
-
-
 const Header: React.FC = () => {
-  const handleKeyword = () => {
+  const handleKeyword = () => {};
 
-  }
-  
   return (
     <Base>
       <Navigation>
@@ -155,16 +152,18 @@ const Header: React.FC = () => {
               <Link href="/tv">
                 <MenuButton>TV 프로그램</MenuButton>
               </Link>
-            </Menu>  
+            </Menu>
             <SearchMenu>
               <SearchContainer>
                 <SearchFormWrapper>
                   <SearchForm>
-                    <SearchLabel />
-                    <SearchInput
-                      placeholder="콘텐츠, 인물, 컬렉션, 유저를 검색해보세요"
-                      onChange={handleKeyword}
-                    />
+                    <SearchLabel>
+                      <AiOutlineSearch />
+                      <SearchInput
+                        placeholder="콘텐츠, 인물, 컬렉션, 유저를 검색해보세요"
+                        onChange={handleKeyword}
+                      />
+                    </SearchLabel>
                   </SearchForm>
                 </SearchFormWrapper>
               </SearchContainer>
@@ -180,6 +179,6 @@ const Header: React.FC = () => {
       </Navigation>
     </Base>
   );
-}
+};
 
 export default Header;
